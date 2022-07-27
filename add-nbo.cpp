@@ -11,6 +11,7 @@ uint32_t write32bitnbo(char filename[])
     fread(buffer, sizeof(uint8_t), MAX, fp);
     uint32_t* p = reinterpret_cast<uint32_t*>(buffer);
     uint32_t n = ntohl(*p);
+    fclose(fp);
     return n;
 }
 
